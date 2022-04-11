@@ -29,7 +29,7 @@ Rotate the image using cv2.rotate(smaller_frame,cv2.cv2.ROTATE_180)
 
 ## Program:
 ``` Python
-### Developed By: Arunraj.R
+### Developed By: R ARUNRAJ
 ### Register No:212220230004
 
 ## i) Write the frame as JPG file
