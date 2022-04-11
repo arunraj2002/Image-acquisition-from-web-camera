@@ -65,49 +65,47 @@ cv2.destroyAllWindows()
 
 
 ## iii) Display the video by resizing the window
-import cv2
-import numpy as np
-
-cap = cv2.VideoCapture(0)
-
-
-while True:
-    ret, frame = cap.read()
-    width = int(cap.get(3))
-    height = int(cap.get(4))
-    
-    image = np.zeros(frame.shape, np.uint8)
-    smaller_frame = cv2.resize(frame, (0,0), fx = 0.5, fy=0.5)
-
-    cv2.imshow("NewPicture.jpg",smaller_frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-videoCaptureObject.release()
-cv2.destroyAllWindows()
-
-
+    import cv2
+    import numpy as np
+    cap=cv2.VideoCapture(0)
+    while True:
+        ret,frame=cap.read()
+        width=int(cap.get(3))
+        height=int(cap.get(4))
+        image=np.zeros(frame.shape,np.uint8)
+        smaller_frame=cv2.resize(frame,(0,0),fx=0.5,fy=0.5)
+        image[:height//2,:width//2]=smaller_frame
+        image[height//2: , :width//2]=smaller_frame
+        image[:height//2,width//2:]=smaller_frame
+        image[height//2:,width//2:]=smaller_frame
+        cv2.imshow('frame',image)
+        if cv2.waitKey(1)==ord('q'):
+            break
+    cap.release()
+    cv2.destroyAllWindows()
 
 
 ## iv) Rotate and display the video
 
- import cv2
-import numpy as np
-
-cap = cv2.VideoCapture(0)
-
-while True:
-    ret, frame = cap.read()
-
-    frame = cv2.rotate(frame,cv2.cv2.ROTATE_180)
-
-    cv2.imshow("NewPicture.jpg",frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-videoCaptureObject.release()
-cv2.destroyAllWindows()
-
+ 
+     import cv2
+     import numpy as np
+     cap=cv2.VideoCapture(0)
+     while True:
+         ret,frame=cap.read()
+         width=int(cap.get(3))
+         height=int(cap.get(4))
+         image=np.zeros(frame.shape,np.uint8)
+         smaller_frame=cv2.resize(frame,(0,0),fx=0.5,fy=0.5)
+         image[:height//2,:width//2]=cv2.rotate(smaller_frame,cv2.cv2.ROTATE_180)
+         image[height//2: , :width//2]=smaller_frame
+         image[:height//2,width//2:]=cv2.rotate(smaller_frame,cv2.cv2.ROTATE_180)
+         image[height//2:,width//2:]=smaller_frame
+         cv2.imshow('frame',image)
+         if cv2.waitKey(1)==ord('q'):
+             break
+     cap.release()
+     cv2.destroyAllWindows()
 
 
 
@@ -128,13 +126,15 @@ cv2.destroyAllWindows()
 
 
 ### iii) Display the video by resizing the window
-![Screenshot (373)](https://user-images.githubusercontent.com/75235747/161419629-b2ce1c88-ede3-4309-947c-77c9328d6312.png)
+![Screenshot (385)](https://user-images.githubusercontent.com/75235747/162723836-dfc4c77f-3a13-404f-af30-d22ec1adad8c.png)
+
 
 
 
 
 ### iv) Rotate and display the video
-![Screenshot (375)](https://user-images.githubusercontent.com/75235747/161419633-5eef0a12-f594-4d84-a14d-a0935db0eca3.png)
+![Screenshot (418)](https://user-images.githubusercontent.com/75235747/162724360-a610b5d0-5e89-4c28-af7d-50a24127228b.png)
+
 
 
 
