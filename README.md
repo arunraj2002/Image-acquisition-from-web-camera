@@ -92,6 +92,11 @@ Rotate the image using cv2.rotate(smaller_frame,cv2.cv2.ROTATE_180)
 
 ### ii) Display the video
 <img src="https://user-images.githubusercontent.com/75235747/161419618-1bd200fb-7bd1-46ef-864f-f775feb893a3.png" width="600">
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ### iii) Display the video by resizing the window
 <img src="https://user-images.githubusercontent.com/75235747/162723836-dfc4c77f-3a13-404f-af30-d22ec1adad8c.png" width="600">
